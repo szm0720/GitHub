@@ -2,10 +2,9 @@ package com.springboot.controller;
 
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.rabbit.annotation.RabbitHandler;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.rabbit.annotation.*;
 import org.springframework.stereotype.Component;
-
 
 /**
  * @author: shimingming
@@ -18,17 +17,17 @@ import org.springframework.stereotype.Component;
 public class MqListenerController {
 
     @RabbitHandler
-    @RabbitListener(queues = "ha.firmiana.proxy.createInsurance")
-    public void createInsurance(byte[] bytes) {
+    @RabbitListener(queues = "com.byte")
+    public void combyte(byte[] bytes) {
 
         String jsonStr="";
         try {
             jsonStr=byteArrayToStr(bytes);
             //字节转换
-            log.info("梧桐创建订单队列createInsurance 接收到参数:{}",jsonStr);
-            log.info("createInsurance over");
+            log.info("com.byte 接收到参数:{}",jsonStr);
+            log.info(" over");
         } catch (Exception e) {
-            log.error("createInsurance error,{},传入参数:{}",e.toString(),jsonStr);
+            log.error(" error,{},传入参数:{}",e.toString(),jsonStr);
         }
     }
 
@@ -45,4 +44,15 @@ public class MqListenerController {
         String str = new String(byteArray);
         return str;
     }
+
+    @RabbitHandler
+    @RabbitListener(queues = "com.string")
+//    @RabbitListener(bindings ={@QueueBinding(value = @Queue(value = "q5",durable = "true"),
+//            exchange =@Exchange(value = "zhihao.miao.exchange",durable = "true"),key = "welcome")})
+    public void handleMessage(Message message){
+
+        System.out.println(message.getMessageProperties());
+        System.out.println(new String(message.getBody()));
+    }
+
 }

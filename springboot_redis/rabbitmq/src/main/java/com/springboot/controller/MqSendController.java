@@ -25,12 +25,23 @@ public class MqSendController {
     private AmqpTemplate rabbitTemplate;
 
     @ResponseBody
-    @RequestMapping(value = "/mq", method = RequestMethod.POST)
+    @RequestMapping(value = "/mqbyte", method = RequestMethod.POST)
     public String mq(@RequestBody String content) {
 
         log.info("模拟发送消息 ,内容:{}", content);
 
-        rabbitTemplate.convertAndSend("firmiana", "ha.firmiana.proxy.createInsurance.nihao", content.getBytes());
+        rabbitTemplate.convertAndSend("mq", "com.byte.nihao", content.getBytes());
+        return "模拟发送 ok";
+
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/mqString", method = RequestMethod.POST)
+    public String mqString(@RequestBody String content) {
+
+        log.info("模拟发送消息 ,内容:{}", content);
+
+        rabbitTemplate.convertAndSend("mq", "com.string.nihao", content);
         return "模拟发送 ok";
 
     }
