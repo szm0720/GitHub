@@ -1,7 +1,6 @@
 package com.redis.service;
 
 import com.redis.dao.CacheDao;
-import com.redis.mapper.SysUserMapper;
 import com.redis.modal.entity.SysUser;
 import com.redis.modal.form.JwtBssForm;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**

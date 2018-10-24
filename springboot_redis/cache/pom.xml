@@ -30,15 +30,21 @@
             <scope>test</scope>
         </dependency>
 
+        <!--开启缓存，springboot 默认使用 ehcache 做缓存  start-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-cache</artifactId>-->
+        <!--</dependency>-->
+
+        <!--使用ehcache做缓存 end-->
+
+        <!--使用redis做缓存 start-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-cache</artifactId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>net.sf.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-        </dependency>
+        <!--使用redis做缓存 end-->
 
 
         <!--druid-->
