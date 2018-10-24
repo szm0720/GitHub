@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.redis.mapper.SysUserMapper">
+
+    <!-- 更新用户信息  -->
+    <update id="updateUserNameAndPwd">
+		UPDATE auth_sys_user SET
+			login_name = #{username},
+			password = #{password}
+		WHERE login_name = #{oldUsername} and type=#{type}
+	</update>
+</mapper>
