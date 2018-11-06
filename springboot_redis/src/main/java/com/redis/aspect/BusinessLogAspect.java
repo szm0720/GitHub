@@ -39,13 +39,11 @@ public class BusinessLogAspect {
         String name = joinPoint.getSignature().getName();
         String clazz = joinPoint.getTarget().getClass().toString();
         clazz = clazz.substring(5);
-//        log.info("耗时统计：" + clazz + "." + name + "()" +  values + " 开始处理...");
-        System.out.println("耗时统计：" + clazz + "." + name + "()" +  values + " 开始处理...");
+        log.info("耗时统计：" + clazz + "." + name + "()" +  values + " 开始处理...");
         long startTime = System.currentTimeMillis();
         Object obj = joinPoint.proceed();
         long endTime = System.currentTimeMillis();
-//        log.info("耗时统计：" + clazz + "." + name + "()" +  values + " -> 耗时" + (endTime - startTime) + "ms");
-        System.out.println("耗时统计：" + clazz + "." + name + "()" +  values + " -> 耗时" + (endTime - startTime) + "ms");
+        log.info("耗时统计：" + clazz + "." + name + "()" +  values + " -> 耗时" + (endTime - startTime) + "ms");
         return obj;
     }
 }
