@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="cache" />
         <module name="jedis" />
+        <module name="mysql" />
         <module name="rabbitmq" />
         <module name="redisTemplate" />
       </profile>

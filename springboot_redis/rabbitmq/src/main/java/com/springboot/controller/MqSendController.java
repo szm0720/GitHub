@@ -30,7 +30,7 @@ public class MqSendController {
 
         log.info("模拟发送消息 ,内容:{}", content);
 
-        rabbitTemplate.convertAndSend("mq", "com.byte.nihao", content.getBytes());
+        rabbitTemplate.convertAndSend("firmiana", "ha.firmiana.proxy.test.nihao", content.getBytes());
         return "模拟发送 ok";
 
     }
@@ -41,7 +41,7 @@ public class MqSendController {
 
         log.info("模拟发送消息 ,内容:{}", content);
 
-        rabbitTemplate.convertAndSend("mq", "com.string.nihao", content);
+        rabbitTemplate.convertAndSend("firmiana", "ha.firmiana.proxy.test.nihao", content);
         return "模拟发送 ok";
 
     }
