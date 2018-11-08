@@ -13,3 +13,6 @@
 	3,jedis 9003 
 	4,rabbitmq 9004
 	5,cache 9005
+	6,oauth2 9006
+	7,shiro_jwt 9007
+	8,shiro    9008

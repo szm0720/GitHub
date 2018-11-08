@@ -14,8 +14,11 @@
         <module name="cache" />
         <module name="jedis" />
         <module name="mysql" />
+        <module name="oauth2" />
         <module name="rabbitmq" />
         <module name="redisTemplate" />
+        <module name="shiro" />
+        <module name="shiro_jwt" />
       </profile>
     </annotationProcessing>
   </component>

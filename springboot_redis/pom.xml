@@ -10,6 +10,9 @@
         <module>rabbitmq</module>
         <module>cache</module>
         <module>mysql</module>
+        <module>oauth2</module>
+        <module>shiro_jwt</module>
+        <module>shiro</module>
     </modules>
 
     <parent>
@@ -95,15 +98,15 @@
         </dependencies>
     </dependencyManagement>
 
-    <repositories>
-        <repository>
-            <id>spring-milestones</id>
-            <url>https://repo.spring.io/libs-milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>spring-milestones</id>-->
+            <!--<url>https://repo.spring.io/libs-milestone</url>-->
+            <!--<snapshots>-->
+                <!--<enabled>false</enabled>-->
+            <!--</snapshots>-->
+        <!--</repository>-->
+    <!--</repositories>-->
 
     <build>
         <finalName>springboot</finalName>
