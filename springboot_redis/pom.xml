@@ -13,6 +13,8 @@
         <module>oauth2</module>
         <module>shiro_jwt</module>
         <module>shiro</module>
+        <module>dubbo-consumer</module>
+        <module>DataStructure</module>
     </modules>
 
     <parent>

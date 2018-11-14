@@ -12,6 +12,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cache" />
+        <module name="DataStructure" />
         <module name="jedis" />
         <module name="mysql" />
         <module name="oauth2" />
@@ -21,5 +22,8 @@
         <module name="shiro_jwt" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dubboconsumer" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
